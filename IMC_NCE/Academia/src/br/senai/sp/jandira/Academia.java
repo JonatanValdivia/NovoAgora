@@ -2,23 +2,32 @@ package br.senai.sp.jandira;
 
 import java.time.LocalDate;
 
-import br.senai.sp.jandira.model.Aluno;
+import br.senai.sp.jandira.gui.FrameAcademia;
+import br.senai.sp.jandira.model.Pessoa;
 
 public class Academia {
 
 	public static void main(String[] args) {
-		Aluno aluno1 = new Aluno();
-		aluno1.setNome("Alice");
-		aluno1.setSexo('F');
-		System.out.println(aluno1.getSexo()); 
-		aluno1.setPeso(130);
-		aluno1.setAltura(1.80);
-		System.out.println(aluno1.getImc());
-		System.out.println(aluno1.getStatus());
+		FrameAcademia tela = new FrameAcademia();
+		tela.criarTela();
+		/*Pessoa pessoa1 = new Pessoa();
+		pessoa1.setNome("Joaquin");
+		System.out.println("Nome: " + pessoa1.getNome());
+		pessoa1.setSexo('M');
+		System.out.println("Sexo: " + pessoa1.getSexo());
 		LocalDate localDate = LocalDate.now();
-		aluno1.setDataNacimento(localDate.of(2003, 11, 3));
-		System.out.println(aluno1.getIdade());
-		//System.out.println("Ano: " + localDate.getYear());
+		pessoa1.setDataNacimento(localDate.of(2003, 11, 3));
+		System.out.println("Idade: " + pessoa1.getIdade());
+		pessoa1.setPeso(120);
+		System.out.printf("Peso: %.2f\n" , pessoa1.getPeso());
+		pessoa1.setAltura(1.80);
+		System.out.printf("Altura: %.2f\n" , pessoa1.getAltura());
+		System.out.printf("IMC: %.2f\n", pessoa1.getImc());
+		System.out.println(pessoa1.getStatusImc());
+		pessoa1.setNivelDeAtividade("NENHUMA");
+		System.out.println("Nível de atividade: " + pessoa1.getNivelDeAtividade());
+		System.out.printf("De acordo com sua atividade, seu gasto calórico é: %.2f\n", pessoa1.getStatusNivelDeAtividade());
+		//System.out.println("Ano: " + localDate.getYear());*/
 		
 		
 	}

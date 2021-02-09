@@ -1,3 +1,7 @@
 1612198205171	Rename type 'Acaademia'
 1612198816172	Rename field 'AnoNascimento'
 1612203703345	Delete element
+1612387589531	Rename type 'Aluno'
+1612387642935	Rename local variable 'aluno1'
+1612464718311	Rename method 'getStatus'
+1612466996721	Delete element

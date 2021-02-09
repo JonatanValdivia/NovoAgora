@@ -1,9 +1,0 @@
-package br.senai.sp.jandira;
-
-public class Academia {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
