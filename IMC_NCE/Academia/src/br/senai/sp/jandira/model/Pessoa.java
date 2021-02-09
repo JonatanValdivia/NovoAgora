@@ -21,7 +21,7 @@ public class Pessoa {
 	//14,7 x peso + 496
 	//8,7 x peso + 829
 	//10,5 x peso + 596.
-	public double getNdc() {
+	public double getNcd() {
 		if(this.getSexo() == 'M' && this.getIdade() >= 14 && this.getIdade() <= 30) {
 			return 15.3 * this.getPeso() + 679;
 		} else if(this.getSexo() == 'M' && this.getIdade() > 30 && this.getIdade() <= 60) {
@@ -143,21 +143,21 @@ public class Pessoa {
 	
 	public double getStatusNivelDeAtividade() {
 		if(this.getNivelDeAtividade() == "NENHUMA" && this.getSexo() == 'M'){
-			return this.getNdc();
+			return this.getNcd();
 		} else if(this.getNivelDeAtividade() == "LEVE" && this.getSexo() == 'M') {
-			return this.getNdc() * 1.5;
+			return this.getNcd() * 1.5;
 		} else if(this.getNivelDeAtividade() == "MODERADA" && this.getSexo() == 'M') {
-			return this.getNdc() * 1.8;
+			return this.getNcd() * 1.8;
 		} else if(this.getNivelDeAtividade() == "INTENSA" && this.getSexo() == 'M') {
-			return this.getNdc() * 2.1;
+			return this.getNcd() * 2.1;
 		} else if(this.getNivelDeAtividade() == "NENHUMA" && this.getSexo() == 'F'){
-			return this.getNdc();
+			return this.getNcd();
 		} else if(this.getNivelDeAtividade() == "LEVE" && this.getSexo() == 'F') {
-			return this.getNdc() * 1.6;
+			return this.getNcd() * 1.6;
 		} else if(this.getNivelDeAtividade() == "MODERADA" && this.getSexo() == 'F') {
-			return this.getNdc() * 1.6;
+			return this.getNcd() * 1.6;
 		} else if(this.getNivelDeAtividade() == "INTENSA" && this.getSexo() == 'F') {
-			return this.getNdc() * 1.8;
+			return this.getNcd() * 1.8;
 		} else {
 			return 00;
 		}
