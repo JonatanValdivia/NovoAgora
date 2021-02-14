@@ -1,26 +1,22 @@
 package br.senai.sp.jandira.model;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
-public class Pessoa {
+public class Pessoa{
 	private String nome;
 	private LocalDate dataNascimento;
 	private double peso;
 	private double altura;
 	private char sexo;
-	private String status;
 	private String nivelDeAtividade;
-	private String statusAluno;
 	
-	LocalDate localDate = LocalDate.now();
 	
+	 
 	public double getImc() {
 		return this.getPeso()/(this.getAltura() * this.getAltura());
 	}
 	
-	//14,7 x peso + 496
-	//8,7 x peso + 829
-	//10,5 x peso + 596.
 	public double getNcd() {
 		if(this.getSexo() == 'M' && this.getIdade() >= 14 && this.getIdade() <= 30) {
 			return 15.3 * this.getPeso() + 679;
@@ -47,7 +43,9 @@ public class Pessoa {
 		return this.nome;
 	}
 	
-	public void setDataNacimento(LocalDate dataNascimento) {
+	
+	
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 	
@@ -57,7 +55,7 @@ public class Pessoa {
 	
 	
 	//Obter o dia/mes/ano - agora. O momento atual.
-	public int getIdade() {
+	public int getIdade() { 
 		LocalDate hoje = LocalDate.now();
 		Period periodo = Period.between(this.getDataNacimento(), hoje);
 		return periodo.getYears();
@@ -161,9 +159,5 @@ public class Pessoa {
 		} else {
 			return 00;
 		}
-	}
-	
-	public void setStatusAluno(String statusAluno) {
-		this.statusAluno = statusAluno;
 	}
 }
