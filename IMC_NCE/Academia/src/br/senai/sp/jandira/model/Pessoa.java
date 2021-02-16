@@ -10,29 +10,9 @@ public class Pessoa{
 	private double altura;
 	private char sexo;
 	private String nivelDeAtividade;
-	
-	
 	 
 	public double getImc() {
 		return this.getPeso()/(this.getAltura() * this.getAltura());
-	}
-	
-	public double getNcd() {
-		if(this.getSexo() == 'M' && this.getIdade() >= 14 && this.getIdade() <= 30) {
-			return 15.3 * this.getPeso() + 679;
-		} else if(this.getSexo() == 'M' && this.getIdade() > 30 && this.getIdade() <= 60) {
-			return 11.6 * this.getPeso() + 879;
-		} else if(this.getSexo() == 'M' && this.getIdade() > 60) {
-			return 13.5 * this.getPeso() + 487;
-		} else if(this.getSexo() == 'F' && this.getIdade() >= 14 && this.getIdade() <= 30){
-			return 14.7 * this.getPeso() + 496;
-		} else if(this.getSexo() == 'F' && this.getIdade() > 30 && this.getIdade() <= 60) {
-			return 8.7 * this.getPeso() + 829;
-		} else if(this.getSexo() == 'F' && this.getIdade() > 60) {
-			return 10.5 * this.getPeso() + 596;
-		} else {
-			return 0;
-		}
 	}
 
 	public void setNome(String nome) {
@@ -43,8 +23,6 @@ public class Pessoa{
 		return this.nome;
 	}
 	
-	
-	
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
@@ -52,7 +30,6 @@ public class Pessoa{
 	public LocalDate getDataNacimento() {
 		return this.dataNascimento;
 	}
-	
 	
 	//Obter o dia/mes/ano - agora. O momento atual.
 	public int getIdade() { 
@@ -79,13 +56,7 @@ public class Pessoa{
 	
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
-		if(this.getSexo() == 'F') {
-			
-		}else if(this.getSexo() == 'M'){
-			
-		}else {
-			System.out.println("Especifique o sexo!(F/M)");
-		}
+		
 	}
 	
 	public char getSexo() {
@@ -112,34 +83,32 @@ public class Pessoa{
 	
 	public void setNivelDeAtividade(String nivelDeAtividade) {
 		this.nivelDeAtividade = nivelDeAtividade;
-		if(this.getSexo() == 'M' && this.getNivelDeAtividade() == "NENHUMA"){
 		
-		} else if(this.getSexo() == 'M' && this.getNivelDeAtividade() == "LEVE") {
-			
-		} else if(this.getSexo() == 'M' && this.getNivelDeAtividade() == "MODERADA") {
-			
-		} else if(this.getSexo() == 'M' && this.getNivelDeAtividade() == "INTENSA") {
-			
-		}else if(this.getSexo() == 'F' && this.getNivelDeAtividade() == "NENHUMA" ) {
-			
-		} else if(this.getSexo() == 'F' && this.getNivelDeAtividade() == "LEVE") {
-			
-		} else if(this.getSexo() == 'F' && this.getNivelDeAtividade() == "MODERADA") {
-		
-		} else if(this.getSexo() == 'F' && this.getNivelDeAtividade() == "INTENSA") {
-			
-		}
-		
-		else {
-			System.out.println("Especifique o seu sexo e/ou especifique o seu nível de atividade física.");
-		}
 	}
 	
 	public String getNivelDeAtividade() {
 		return this.nivelDeAtividade;
 	}
 	
-	public double getStatusNivelDeAtividade() {
+	public double getNcd() {
+		if(this.getSexo() == 'M' && this.getIdade() >= 14 && this.getIdade() <= 30) {
+			return 15.3 * this.getPeso() + 679;
+		} else if(this.getSexo() == 'M' && this.getIdade() > 30 && this.getIdade() <= 60) {
+			return 11.6 * this.getPeso() + 879;
+		} else if(this.getSexo() == 'M' && this.getIdade() > 60) {
+			return 13.5 * this.getPeso() + 487;
+		} else if(this.getSexo() == 'F' && this.getIdade() >= 14 && this.getIdade() <= 30){
+			return 14.7 * this.getPeso() + 496;
+		} else if(this.getSexo() == 'F' && this.getIdade() > 30 && this.getIdade() <= 60) {
+			return 8.7 * this.getPeso() + 829;
+		} else if(this.getSexo() == 'F' && this.getIdade() > 60) {
+			return 10.5 * this.getPeso() + 596;
+		} else {
+			return 0;
+		}
+	}
+	
+	public double getNCDNivelAtividade() {
 		if(this.getNivelDeAtividade() == "NENHUMA" && this.getSexo() == 'M'){
 			return this.getNcd();
 		} else if(this.getNivelDeAtividade() == "LEVE" && this.getSexo() == 'M') {

@@ -66,7 +66,6 @@ public class FrameAcademia {
 		JTextField textAltura = new JTextField();
 		textAltura.setBounds(10, 270, 100, 30);
 		
-
 		JLabel labelSexo = new JLabel();
 		labelSexo.setText("Sexo do aluno: ");
 		labelSexo.setBounds(10, 300, 100, 30);
@@ -143,8 +142,6 @@ public class FrameAcademia {
 		labelNcd.setFont(new Font("Verdana", 1, 15));
 		labelNcd.setBounds(400, 240, 200, 30);
 		
-		
-		
 		telaAcademia.getContentPane().add(labelNomeDoAluno);
 		telaAcademia.getContentPane().add(textNome);
 		telaAcademia.getContentPane().add(labelDataDeNascimento);
@@ -170,6 +167,7 @@ public class FrameAcademia {
 		telaAcademia.setVisible(true);
 		
 		buttonCalcular.addActionListener(new ActionListener() {
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Pessoa pessoa1 = new Pessoa();
@@ -183,7 +181,7 @@ public class FrameAcademia {
 				pessoa1.setAltura(Double.parseDouble(textAltura.getText()));
 				pessoa1.setSexo(radioMasculino.isSelected()?'M':'F');
 				if(! radioMasculino.isSelected() && !radioFeminino.isSelected()) {
-					JOptionPane.showMessageDialog(null, "Selecione o sexo! (Masculino/Feminino)", null, 1);
+					JOptionPane.showMessageDialog(null, "Selecione o sexo! (Masculino/Feminino), ", null, 1);
 				} 				
 				pessoa1.setNivelDeAtividade(combo.getSelectedItem().toString());
 				if(combo.getSelectedItem().equals("Selecione um nível de atividade")) {
@@ -197,7 +195,7 @@ public class FrameAcademia {
 				labelImc.setText("IMC: " + String.format("%.2f",pessoa1.getImc()));
 				labelStatusImc.setText("Status IMC: " + String.valueOf(pessoa1.getStatusImc()));
 				labelNivelDeAtividade.setText("Nivel de atividade física: " + (pessoa1.getNivelDeAtividade()));
-				labelNcd.setText("NCD: " + String.format("%.2f",pessoa1.getStatusNivelDeAtividade()));
+				labelNcd.setText("NCD: " + String.format("%.2f",pessoa1.getNCDNivelAtividade()));
 			}
 		});	
 		
